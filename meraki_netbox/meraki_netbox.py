@@ -27,24 +27,24 @@ class MerakiNetbox:
         if "NETBOX_URL" in os.environ:
             self.nb_url = os.getenv("NETBOX_URL")
         else:
-            logging.error("Environmnet variable NETBOX_URL must be set")
+            logging.error("Environment variable NETBOX_URL must be set")
             sys.exit(1)
 
         if "NETBOX_TOKEN" in os.environ:
             self.nb_token = os.getenv("NETBOX_TOKEN")
         else:
-            logging.error("Environmnet variable NETBOX_TOKEN must be set")
+            logging.error("Environment variable NETBOX_TOKEN must be set")
             sys.exit(1)
 
         self.nb = pynetbox.api(url=self.nb_url, token=self.nb_token)
         self.nb_prefixes = self.nb.ipam.prefixes.all()
         self.nb_ip_addresses = self.nb.ipam.ip_addresses.all()
 
-        # Inititalize Meraki
+        # Initialize Meraki
         if "MERAKI_ORG_ID" in os.environ:
             self.org_id = os.getenv("MERAKI_ORG_ID")
         else:
-            logging.error("Environmnet variable MERAKI_ORG_ID must be set")
+            logging.error("Environment variable MERAKI_ORG_ID must be set")
             sys.exit(1)
 
         if "MERAKI_TIMESPAN" in os.environ:
