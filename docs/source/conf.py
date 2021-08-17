@@ -16,7 +16,7 @@ import sys
 
 # -- Project information -----------------------------------------------------
 
-project = 'Myproject'
+project = 'Meraki-Netbox'
 copyright = '2020, Cisco Public Sector'
 author = 'Cisco Public Sector'
 
@@ -39,7 +39,7 @@ extensions = [
 
 extensions.append('autoapi.extension')
 autoapi_type = 'python'
-autoapi_dirs = ['../../myproject']
+autoapi_dirs = ['../../meraki_netbox']
 autoapi_ignore = ['**/cli/**']
 
 # Add any paths that contain templates here, relative to this directory.
