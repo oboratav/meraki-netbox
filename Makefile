@@ -1,7 +1,7 @@
 # Makefile
 PYTHON_EXE = python3
 PROJECT_NAME="meraki-netbox"
-TOPDIR = $(shell git rev-parse --show-toplevel)
+TOPDIR = $(shell git rev-parse --show-toplevel | sed 's/[[:space:]]/\\&/g')
 PYDIRS="meraki_netbox"
 VENV = venv_$(PROJECT_NAME)
 VENV_BIN=$(VENV)/bin
